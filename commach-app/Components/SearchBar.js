@@ -69,7 +69,10 @@ export default function SearchBar( {setVisible,visible}) {
     const inputRef = useRef();
 
   
-
+    const onPressProduct = () => {
+        // Handle press event here
+        navigation.navigate("ProductDetail")
+      };
   const filteredData = useMemo(() => {
     const searchLetterArray = searchValue
        .split('')
@@ -199,14 +202,34 @@ export default function SearchBar( {setVisible,visible}) {
             
             </View>
 
-            {searchValue!==''?( <FlatList
-        data={filteredData}
-        renderItem={renderItem}
-        keyExtractor={item => item.value}
-        style={styles.container}
-        contentContainerStyle={styles.contentContainer}
-      />)
+            {searchValue!==''?( 
+    //         <FlatList
+    //     data={filteredData}
+    //     renderItem={renderItem}
+    //     keyExtractor={item => item.value}
+    //     style={styles.container}
+    //     contentContainerStyle={styles.contentContainer}
+    //   />
+    <ScrollView contentContainerStyle={styles.list}>
+    {filteredData.map((product,index)=>(
+        <View key={index}>
+                       <View style={{backgroundColor:"grey",height:0.3,width:"100%",marginBottom:10}}></View>
+
+            <Text style={styles.text} onPress={onPressProduct}><FontAwesome style={styles.icon2} name='search' size={15} />
+{"   "}{product.value}</Text>
+        </View>
+    ))}
+  </ScrollView>
+      )
       :<></> }
+
+      {/* <ScrollView contentContainerStyle={styles.list}>
+        {filteredData.map((product,index)=>(
+            <View key={index}>
+                <Text style={styles.text}>{product}</Text>
+            </View>
+        ))}
+      </ScrollView> */}
            
             {/* <FlatList
                     data={data}
@@ -303,6 +326,11 @@ const styles = StyleSheet.create({
             width:"100%",
 
           },
+          text:{
+            marginLeft:20,
+            marginRight:100
+          },
+        
    
    
 });

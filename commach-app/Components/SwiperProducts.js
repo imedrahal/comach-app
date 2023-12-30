@@ -6,7 +6,7 @@ import logo from '../assets/logo.png'
 const { width } = Dimensions.get('window');
 const data=[{name:"lowel",image:logo},{name:"lowel",image:logo},{name:"lowel",image:logo},{name:"lowel",image:logo},{name:"lowel",image:logo},{name:"lowel",image:logo},{name:"lowel",image:logo},{name:"lowel",image:logo}]
 
-const headers = ['header1', 'header header 2', 'header3', 'header header4', 'header5', 'header header6', 'header7', 'header header8', 'header9', 'header10']
+const headers = ['categories 1', 'categories  2', 'categories 3', 'categories 14', 'categories 5', 'categories  categories 6', 'categories 7', 'categories  categories 8', 'categories 9', 'categories 10']
 
 let animationActive = true;
 let animationActiveRef;
@@ -54,12 +54,13 @@ export default function ScrollableTabViewPager3({setVisible,visible}) {
         <View style={styles.container}>
             <View>
             {/* {console.log(item,"swiper1111111111")} */}
-
                 <FlatList
                     data={headers}
                     ref={headerScrollView}
                     keyExtractor={(item) => item}
                     horizontal
+                    // numColumns={2}
+                    key={''}
                     style={styles.headerScroll}
                     onScroll={Animated.event(
                         [{ nativeEvent: { contentOffset: { x: scrollX } } }],
@@ -95,8 +96,8 @@ export default function ScrollableTabViewPager3({setVisible,visible}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        borderRadius: 5,
-        marginBottom:-550
+        borderRadius: 50,
+        marginBottom:-525,
     },
     headerScroll: {
         flexGrow: 0,

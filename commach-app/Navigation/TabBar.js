@@ -6,6 +6,8 @@ import Contact from '../Components/Contact'
 import Categories from '../Components/Categories'
 import Agence from '../Components/Agences'
 import SearchPage from '../Components/SearchPage'
+import ProductDetail from "../Components/ProductDetail"
+import AllPriducts from "../Components/AllProducts"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -40,10 +42,12 @@ const screenOptions = {
 
 return (
 
-     <Tab.Navigator screenOptions={screenOptions}>
+     <Tab.Navigator screenOptions={screenOptions}
+    //  initialRouteName="Welcome"
+     >
         <Tab.Screen 
-        name="Home" 
-        component={RootStack} 
+        name="Home"
+        component={HomeStack} 
         options={{
           tabBarIcon: ({focused})=>{
             return (
@@ -53,8 +57,7 @@ return (
           </View>
             )
           }
-        }}
-        />
+        }}/>
         <Tab.Screen 
         name="About" 
         component={About} 
@@ -102,18 +105,36 @@ return (
        )
     }
 
-    const RootStack = (props) => {
+    // const RootStack = (props) => {
+    //     return (
+    //             <Stack.Navigator screenOptions={{ headerShown: false }}
+    //             // initialRouteName="Home"
+    //             >
+    //            <Stack.Screen name="HomePage" component={HomeStack} /> 
+    //           <Stack.Screen name="Categories" component={Categories} /> 
+    //           <Stack.Screen name="SearchPage" component={SearchPage} />  
+    //           <Stack.Screen name="ProductDetail" component={ProductDetail} /> 
+    //           {/* <Stack.Screen name="ProductDetail" component={ProductDetail} />  */} 
+    //         </Stack.Navigator>
+    //     );
+    //   };
+      function HomeStack() {
         return (
-                <Stack.Navigator screenOptions={{ headerShown: false }}
-                >
-                    <Stack.Screen name="Home" component={Home} /> 
+          <Stack.Navigator screenOptions={{ headerShown: false }}
+          //  initialRouteName="HomePage"
+          >
+              <Stack.Screen name="HomePage" component={Home}/> 
+              {/* <Stack.Screen name="Welcome" component={Welcome}/>  */}
               <Stack.Screen name="Categories" component={Categories} /> 
-              <Stack.Screen name="SearchPage" component={SearchPage} />     
-    
-            </Stack.Navigator>
-        );
-      };
+              <Stack.Screen name="SearchPage" component={SearchPage} />  
+              <Stack.Screen name="ProductDetail" component={ProductDetail}/> 
+              <Stack.Screen name="AllPriducts" component={AllPriducts}/> 
+              <Stack.Screen name="Agence" component={Agence}/> 
 
+              
+          </Stack.Navigator>
+        );
+      }
     const styles = StyleSheet.create({
         container: {
             flex: 1,
