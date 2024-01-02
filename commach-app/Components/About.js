@@ -1,9 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity,Pressable } from 'react-native';
 import logo from '../assets/logo.png'
 import Equipe from '../assets/Equipe-COMACHEM.jpg'
+import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
 
 export default function About() {
+    const navigation = useNavigation();
+
+    const onPress = () => {
+        // Handle press event here
+        navigation.navigate("HomePage")
+      };
     return (
         <View style={{
             backgroundColor: '#3b3b42', width: "100%",
@@ -13,9 +21,14 @@ export default function About() {
                 <Image source={logo} style={{ width: 125, height: 85, marginBottom: -45, marginTop: 35, margin: 160 }} />
                 <View style={{ backgroundColor: "white", height: 1, width: "100%", marginTop: 40 }}></View>
             </View>
-            <ScrollView >
+            <Pressable onPress={onPress}>
+        <View style={{width:50,height:50,borderRadius:25,backgroundColor:'#DAA520',position:'relative',top:5,left:0}}>
+        <AntDesign name="back" size={24} style={{marginTop:14,marginLeft:10}}/>
+    </View>
+  </Pressable>
+            <ScrollView  >
                 <Text style={{
-                    color: "white", marginTop: 20, marginBottom: -35, fontSize: 35, marginLeft: 105
+                    color: "white", marginTop: 5, marginBottom: -35, fontSize: 35, marginLeft: 105
                 }}>
                     COMACHEM                </Text>
                 <Text style={{
@@ -29,23 +42,156 @@ export default function About() {
                 <Text style={{ color: "white", marginTop: 10, marginBottom: 20, fontSize: 15, padding: 15 }}>
                     COMACHEM est une entreprise familiale qui propose aux professionnels et aux particuliers des produits MDF et dérivé pour la construction, la rénovation, l'aménagement intérieur (cuisine dressing, …).
                     COMACHEM est une entreprise familiale qui propose aux professionnels et aux particuliers des produits MDF et dérivé pour la construction, la rénovation, l'aménagement intérieur (cuisine dressing, …).</Text>
-                <Text style={{ fontWeight: 'bold', fontSize: 30, marginLeft: 20, color: "white" }}>Pourquoi acheter chez COMACHEM ?</Text>
-                <Text style={{fontSize: 15,color:"white",marginTop:10,marginRight:15,marginLeft:15,marginBottom:200}}>Nous proposons des produits de qualité, utilisés par les pros du bois, du cuisine, du bâtiment et du Décoration,
+                <Text style={{ fontWeight: 'bold', fontSize: 30, marginLeft: 20, color: "#DAA520" }}>Pourquoi acheter chez COMACHEM ?</Text>
+                <Text style={{ fontSize: 15, color: "white", marginTop: 10, marginRight: 15, marginLeft: 15, marginBottom: 20}}>COMACHEM est principalement fournisseur et distributeur de MDF, de Placage, High Gloss et Digital Polylac.
 
-                    Vous bénéficiez des conseils et du suivi de commande réalisé par une équipe dynamique,
+COMACHEM s’est axé sur l’innovation à travers la satisfaction des besoins des professionnels du bois, des consultants, des cuisinistes, des architectes, et les décorateurs.
 
-                    Nous pratiquons le juste prix pour toute notre gamme.
+COMACHEM se positionne comme une référence montante du marché des fournisseurs de MDF et de placage avec un stock de large gamme de produits, un service exceptionnel et une expertise unique renforcée par un réseau solide de partenaires internationaux.
+
+COMACHEM essaye de croître sa notoriété et sa réputation sur le marché essentiellement par la sélection des fournisseurs présentant le meilleur rapport qualité-prix ainsi que la recherche permanente de produits innovants.</Text>
+               
+                    <Text style={{
+                    color: "#b19777", marginTop: 6, marginBottom: 20, fontSize: 35, marginLeft: 90
+                }}>
+                    Mission & Vision
+                </Text>
+               
+                <Text style={{
+                    color: "white",marginBottom: 10, fontSize: 25, marginLeft: 10
+                }}>
+                    Animé par l’excellence … conduit par les valeurs.
+                </Text>
+                <Text style={{
+                    color: "#DAA520", marginTop: 6, fontSize: 29, marginLeft: 10
+                }}>
+                    Mission:
+                </Text>
+                <Text style={{ fontSize: 15, color: "white", marginTop: 10, marginRight: 15, marginLeft: 15, marginBottom: 20}}>COMACHEM est principalement fournisseur et distributeur de MDF, de Placage, High Gloss et Digital Polylac.
+                Continuer à fournir à nos clients le meilleur en matière et une grande variété de choix d’avant-garde grâce à notre recherche continuelle de la prochaine nouvelle innovation.
+</Text>
+<Text style={{
+                    color: "#DAA520", marginTop: 6, fontSize: 29, marginLeft: 10
+                }}>
+                    Vision:
+                </Text>
+                <Text style={{ fontSize: 15, color: "white", marginTop: 10, marginRight: 15, marginLeft: 15, marginBottom: 20}}>COMACHEM est principalement fournisseur et distributeur de MDF, de Placage, High Gloss et Digital Polylac.
+                Continuer à croître comme une société de distribution de première classe qui offre d’excellents produits incorporant un service à valeur ajoutée et une expertise pour assurer la satisfaction du client.</Text>
+                <Text style={{
+                    color: "#b19777", marginTop: 6, marginBottom: 20, fontSize: 35, marginLeft: 40
+                }}>
+                Famille COMACHEM
+                </Text>
+
+                <View style={styles.imageRow}>
+  <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25}}>
+  <TouchableOpacity   onPress={() =>
+                    navigation.navigate("ProductDetail",item={name:"18"})
+                  }>
+
+    <Image source={Equipe} style={{height:150,width:200,borderRadius:25}}  />
+    <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>
+       PLUS DE 6 AGENCES</Text>
+       <Text style={{color:"#b19777",marginTop:0,marginLeft:30,marginBottom:50}}>
+       PLUS DE 6 AGENCES</Text>
+       </TouchableOpacity>
+
+       </View>
+       <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginLeft:10}}>
+       <TouchableOpacity    onPress={() =>
+                    navigation.navigate("ProductDetail",item=18)
+                  }>
+
+    <Image source={Equipe}  style={{height:150,width:200,borderRadius:25}}/>
+    
+           <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}} >99% SATISFACTION</Text>
+           <Text style={{color:"#b19777",marginTop:10,marginLeft:30}} >99% SATISFACTION</Text>
+           </TouchableOpacity>
+
+           </View>
+
+  </View>
+  <View style={styles.imageRow}>
+
+<View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25}}>
 
 
-                    COMACHEM. Vous souhaite une bonne visite sur le site, n'hésitez pas à contacter nos spécialistes par e-mail ou par téléphone.</Text>
-                    <Text style={{fontSize: 15,color:"white",marginTop:10,marginRight:15,marginLeft:15,marginBottom:200}}>Nous proposons des produits de qualité, utilisés par les pros du bois, du cuisine, du bâtiment et du Décoration,
+  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}} />
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
 
-Vous bénéficiez des conseils et du suivi de commande réalisé par une équipe dynamique,
+     </View>
 
-Nous pratiquons le juste prix pour toute notre gamme.
+     <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginLeft:10,marginRight:0}}>
+    
+
+  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}}/>
+       <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+</Text>
+<Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+</Text>
+
+</View>
+
+</View>
+<View style={styles.imageRow}>
+
+<View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25}}>
 
 
-COMACHEM. Vous souhaite une bonne visite sur le site, n'hésitez pas à contacter nos spécialistes par e-mail ou par téléphone.</Text>
+  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}} />
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
+
+     </View>
+
+     <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginLeft:10,marginRight:0}}>
+    
+
+  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}}/>
+       <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+</Text>
+<Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+</Text>
+
+</View>
+
+</View>
+<View style={styles.imageRow}>
+
+<View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25}}>
+
+
+  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}} />
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
+
+     </View>
+
+     <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginLeft:10,marginRight:0}}>
+    
+
+  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}}/>
+       <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+</Text>
+<Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+</Text>
+
+</View>
+
+</View>
+<View style={styles.imageRow}>
+
+<View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25,marginLeft:90 }}>
+
+
+  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}} />
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
+
+     </View>
+
+</View>
             </ScrollView>
 
             <StatusBar style="auto" />
@@ -56,10 +202,18 @@ COMACHEM. Vous souhaite une bonne visite sur le site, n'hésitez pas à contacte
 const styles = StyleSheet.create({
     container: {
         // backgroundColor: '#54595F',
-        width: "100%",
+        width: "90%",
         height: "100%",
         // alignItems: 'center',
         justifyContent: 'center',
         // position:"absolute"
     },
+    imageRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: "100%",
+        padding:10
+
+        // Evenly distribute images
+      },
 });

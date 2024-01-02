@@ -21,12 +21,12 @@ export default function Home() {
 
       {/* <Text style={{color:"red",fontSize:30,textAlign: 'center'  }}>COMACHEM</Text> */}
       {/* <Text style={{color:"yellow",fontSize:30,textAlign: 'center'  }}>Vente de panneaux MDF</Text> */}
-      <Services />
-      <AboutUs/>
+      {/* <Services /> */}
+      {/* <AboutUs/> */}
 
       <CardItem/>
-      <Agence/>
-      <Contact/>
+      {/* <Agence/> */}
+      {/* <Contact/> */}
       </ScrollView>
 
       <StatusBar style="auto" />

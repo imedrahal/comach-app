@@ -1,4 +1,3 @@
-// import React, { useState } from 'react';
 // import { Button, Dimensions, Image, LayoutAnimation, Platform, StyleSheet, UIManager, View, Text, TouchableOpacity,Pressable,FlatList } from 'react-native';
 // import { ScrollView } from 'react-native-virtualized-view'
 // // import DraggableFlatList from 'react-native-draggable-flatlist'
@@ -342,9 +341,9 @@
 // //     width: '100%',
 // //   },
 // // });
-
+import React, { useState,useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image,Pressable,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View,Image,Pressable,TouchableOpacity ,FlatList,Button} from 'react-native';
 import Equipe from '../assets/Equipe-COMACHEM.jpg'
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
@@ -352,11 +351,24 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Services() {
     const navigation = useNavigation();
+    const [showMoreImages, setShowMoreImages] = useState(false);
+    // const numImagesToShow = showMoreImages ? 4 : 4;
+    const [renderedNames, setRenderedNames] = useState([]);
+    const [numberOfNamesToDisplay, setNumberOfNamesToDisplay] = useState(4);
 
+    const List =  (images) => {
+        const renderedNames =  images.slice(0, numberOfNamesToDisplay);
+        // console.log(renderedNames, "listtttt")
+      };
+    
     const images = [
         {image:Equipe,title:"PLUS DE 6 AGENCES"},
         {image:Equipe,title:"99% SATISFACTION"},
         {image:Equipe,title:"TRANSPORT ASSURÉ"},
+        {image:Equipe,title:"STOCK "},
+        {image:Equipe,title:"STOCK DISPONIBLE"},
+        {image:Equipe,title:"STOCK DISPONIBLE"},
+        {image:Equipe,title:"STOCK DISPONIBLE"},
         {image:Equipe,title:"STOCK DISPONIBLE"},
       ];
 
@@ -371,6 +383,11 @@ export default function Services() {
         console.log('yesss')
 
     };
+
+    useEffect(() => {
+       
+        List(images)
+      }, []);
   return (
 
 <View style={styles.container}>
@@ -378,35 +395,47 @@ export default function Services() {
        <Text style={{color:"white"}}> OUR</Text> Products</Text>
            {/* <View style={{backgroundColor:"white",height:1,width:"100%",marginBottom:10}}></View> */}
 
-  <View style={styles.imageRow}>
-  <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25}}>
-  <TouchableOpacity   onPress={() =>
-                    navigation.navigate("ProductDetail",item=18)
-                  }>
+           {/* <FlatList
+  data={images.slice(0, numImagesToShow)}
+  renderItem={({ item }) => (
+    <View>
+    <Image source={ item.image } style={styles.image} />
+    <View>
+        <Text>{item.title}</Text>
+    </View>
+    </View>
 
-    <Image source={Equipe} style={{height:150,width:200,borderRadius:25}}  />
-    <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>
-       PLUS DE 6 AGENCES</Text>
-       <Text style={{color:"#b19777",marginTop:0,marginLeft:30,marginBottom:50}}>
-       PLUS DE 6 AGENCES</Text>
-       </TouchableOpacity>
+  )}
+  keyExtractor={(item) => item}
+/> */}
+{(images.slice(0, numberOfNamesToDisplay)).map((item,index) => (
+     <View key={item.id} style={{width:"100%",padding:15}}>
+     <Image source={ item.image } style={styles.image} />
+     <View style={{backgroundColor:"#3b3b42",width:"40%",height:"15%",top:15,left:15,position:"absolute"}}>
+         <Text style={{color:"white",top:"20%"}}>{item.title}</Text>
+     </View>
+     </View>
+   
+  ))} 
+  <View>
+  {images.length > numberOfNamesToDisplay && (
+<TouchableOpacity onPress={() => setNumberOfNamesToDisplay(images.length)}>
+                <Text style={{ marginTop: 10, left: 50, fontSize: 20, color: "white", marginLeft: 105 }}>See More    
+  
+                </Text>
+                <AntDesign style={{marginTop: -30,left:250,color: "white"}} name='arrowright' size={40} />
 
-       </View>
-       <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginLeft:10}}>
-       <TouchableOpacity    onPress={() =>
-                    navigation.navigate("ProductDetail",item=18)
-                  }>
+                </TouchableOpacity>  )}
+                <TouchableOpacity onPress={onPressProduct}>
+                <Text style={{ marginTop: 50, left: 170, fontSize: 20, color: "white", marginLeft: -105, marginRight: -150 }}>Press to see all products      
+                </Text></TouchableOpacity>
+                <AntDesign style={{marginTop: -30,left:290,color: "white"}} name='arrowright' size={40} />
+                </View>
+                
 
-    <Image source={Equipe}  style={{height:150,width:200,borderRadius:25}}/>
-    
-           <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}} >99% SATISFACTION</Text>
-           <Text style={{color:"#b19777",marginTop:10,marginLeft:30}} >99% SATISFACTION</Text>
-           </TouchableOpacity>
+{/* <Button title="See More" onPress={() => setShowMoreImages(true)} /> */}
 
-           </View>
-
-  </View>
-  <View style={styles.imageRow}>
+  {/* <View style={styles.imageRow}>
 
   <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25}}>
   <TouchableOpacity    onPress={() =>
@@ -435,33 +464,196 @@ export default function Services() {
  </View>
 
  <TouchableOpacity onPress={onPressProduct}>
-                <Text style={{ marginTop: 230, left: -270, fontSize: 20, color: "white", marginLeft: -105, marginRight: -150 }}>Press to see all products      
+                <Text style={{ marginTop: 2300, left: -270, fontSize: 20, color: "white", marginLeft: -105, marginRight: -150 }}>Press to see more  products      
+                </Text></TouchableOpacity>
+
+                <TouchableOpacity onPress={onPressProduct}>
+                <Text style={{ marginTop: 270, left: -270, fontSize: 20, color: "white", marginLeft: -105, marginRight: -150 }}>Press to see all products      
                 </Text></TouchableOpacity>
                 <AntDesign style={styles.icon} name='arrowright' size={30} />
-  </View>
+  </View> */}
 </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom:100
+    // flex: 1,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    marginBottom:100,
   },
-  icon:{
-    marginTop: 230, 
-    left: -140,
-    color: "white"
-  },
-
-
-
  
-  imageRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between', // Evenly distribute images
+  image: {
+    width: '100%', // Adjust as needed
+    height: 300, // Adjust as needed
+    
   },
 
 });
+
+
+
+
+// import React, { useState } from 'react';
+// import { Button, Dimensions, Image, LayoutAnimation, Platform, StyleSheet, UIManager, View, Text, TouchableOpacity,Pressable } from 'react-native';
+// const { width } = Dimensions.get('screen');
+// import { ScrollView } from 'react-native-virtualized-view'
+// import { useNavigation } from "@react-navigation/native";
+// import logo from '../assets/logo.png'
+// import Equipe from '../assets/Equipe-COMACHEM.jpg'
+// import { FlatGrid } from "react-native-super-grid";
+
+// const data = [
+//     Equipe,
+//     Equipe,
+//     Equipe,
+// ];
+// for (let i = 0; i < 50; i += 1) data.push(i)
+
+// if (Platform.OS === 'android') {
+//     if (UIManager.setLayoutAnimationEnabledExperimental) {
+//         UIManager.setLayoutAnimationEnabledExperimental(true);
+//     }
+// }
+
+// export default function DynamicColumns() {
+//     const [columns, setColumns] = useState(2);
+//     // const categorie = categories
+//     const navigation = useNavigation();
+
+//     const setColumnCount = (val) => {
+//         LayoutAnimation.easeInEaseOut();
+//         setColumns(val)
+//     }
+
+//     const onPressProduct = (item) => {
+//         // Handle press event here
+//         navigation.navigate("ProductDetail",item={item})
+//     };
+
+//     const renderItem = ({ item, index }) => {
+//         return (
+//           <View>
+//             <View>
+//               <View>
+//                 <Pressable
+//                   style={[styles.itemContainer, { backgroundColor: "white" }]}
+//                   onPress={() =>
+//                     navigation.navigate("ProductDetail",item={item})
+//                   }
+//                 > 
+//                   <Image style={styles.image} resizeMode="contain" source={Equipe} />
+//                   <View style={{ alignItems: "center" }}>
+//                   {console.log(item ,'hellloooo')}
+//                     <Text style={styles.itemName}>name</Text>
+//                     <Text style={styles.itemName}>press to see more details </Text>
+
+                 
+//                   </View>
+//                 </Pressable>
+//               </View>
+    
+//             </View>
+//           </View>
+//         );
+//       };
+
+
+
+//     return (
+//         <View style={styles.container} >
+       
+
+//             <FlatGrid
+//         itemDimension={196}
+//         spacing={8}
+//         data={data}
+//         style={styles.gridView}
+//         renderItem={renderItem}
+//         key={(item) => `key-${item.id * Math.random()}`}
+//       />
+
+//         </View>
+//     )
+// }
+
+// const styles = StyleSheet.create({
+ 
+//     container: {
+//         flex: 1,
+//         height:"100%",
+//          marginBottom:560
+
+//       },
+//       item: {
+//         padding: 4,
+//         flex: 1,
+//         justifyContent: "center",
+//         alignItems: "center",
+//         backgroundColor: "white",
+//         marginTop: 8,
+//         marginHorizontal: 5,
+//         shadowColor: "#000",
+//         shadowOffset: {
+//           width: 0,
+//           height: 2,
+//         },
+//         shadowOpacity: 0.25,
+//         shadowRadius: 3.84,
+    
+//         elevation: 5,
+//       },
+//       image: {
+//         width: "100%",
+//         height: 130,
+//         borderRadius: 8,
+//       },
+//       text: {
+//         color: "orange",
+//         fontWeight: "bold",
+//         // fontFamily: "sanFransisco"
+    
+//       },
+//       searchContainer: {
+//         height: 48,
+//         width: "90%",
+//         borderRadius: 10,
+//         alignSelf: "center",
+//         flexDirection: "row",
+//         alignItems: "center",
+//         justifyContent: "space-between",
+//         // fontFamily:"sanFransisco"
+    
+//       },
+//       gridView: {
+//         marginTop: 0,
+//         flex: 1,
+//         elevation: 5,
+//         shadowColor: "black",
+//         shadowOffset: {
+//           width: 0,
+//           height: 3
+//         },
+//         shadowRadius: 2,
+//         shadowOpacity: 0.2,
+//       },
+//       itemContainer: {
+//         // justifyContent: "flex-end",
+//         borderRadius: 10,
+//         height: 195,
+//         width:195
+//       },
+//       itemName: {
+//         fontSize: 16,
+//         color: "#3b3b42",
+//         marginLeft:-1
+//       },
+//       itemCode: {
+//         fontSize: 12,
+//         color: "grey",
+//         fontWeight: "400",
+//         // fontFamily: "openSansRegular"
+//       },
+// })
+

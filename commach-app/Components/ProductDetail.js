@@ -23,8 +23,8 @@ export default function ProductDetail(product) {
     </View>
   </Pressable>
   </View>
-  {console.log(product.route.params,'olaaaaa')}
-      <Text>{product.route.params}</Text>
+  {console.log(product.route.params.product.value,'searchBar')}
+      {/* <Text>{product.route.params}</Text> */}
       <StatusBar style="auto" />
     </View>
   );

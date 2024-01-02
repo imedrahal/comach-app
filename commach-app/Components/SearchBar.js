@@ -7,7 +7,6 @@ import { useNavigation } from "@react-navigation/native";
 import SwiperProducts from './SwiperProducts'
 import icon from "react-native-vector-icons/FontAwesome"
 
-// const data = [{ name: "lowel", image: logo }, { name: "lowel", image: logo }, { name: "lowel", image: logo }, { name: "lowel", image: logo }, { name: "lowel", image: logo }, { name: "lowel", image: logo }, { name: "lowel", image: logo }, { name: "lowel", image: logo }]
 const data = [
     'Aswin Cheriyala',
     'Alexander Nathaniel Johnson',
@@ -191,7 +190,7 @@ export default function SearchBar( {setVisible,visible}) {
 
                 </View>
                 <View style={styles.Botton}>
-                    <TouchableOpacity onPress={() => {navigation.navigate('SearchPage') }} >
+                    <TouchableOpacity onPress={() => {navigation.navigate('SearchPage',item={searchValue}) }} >
                         <FontAwesome style={styles.icon} name='search' size={25} />
                     </TouchableOpacity>
 
@@ -215,8 +214,10 @@ export default function SearchBar( {setVisible,visible}) {
         <View key={index}>
                        <View style={{backgroundColor:"grey",height:0.3,width:"100%",marginBottom:10}}></View>
 
-            <Text style={styles.text} onPress={onPressProduct}><FontAwesome style={styles.icon2} name='search' size={15} />
-{"   "}{product.value}</Text>
+            <Text style={styles.text} onPress={() =>
+                    navigation.navigate("ProductDetail",item={product})
+                  }><FontAwesome style={styles.icon2} name='search' size={15} />
+{"   "}{product.value} </Text>
         </View>
     ))}
   </ScrollView>

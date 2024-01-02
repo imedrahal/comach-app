@@ -7,10 +7,10 @@ import { AntDesign, FontAwesome,Entypo,MaterialCommunityIcons } from '@expo/vect
 export default function AboutUs() {
     const navigation = useNavigation();
 
-    const onPressNav = () => {
-        // Handle press event here
-        navigation.navigate("Contact")
-    };
+    // const onPressNav = () => {
+    //     // Handle press event here
+    //     navigation.navigate("Contact")
+    // };
     return (
         <View style={styles.container}>
             <Text style={{
@@ -30,7 +30,7 @@ export default function AboutUs() {
                 {/* <MaterialCommunityIcons name="email" size={60} style={{ marginLeft: 80, height: 85, width: 85, marginRight: 0,color:"#DAA520" }} />
                 <Text style={{ color: "white", marginTop: 60, marginLeft: -140 }} >agence.bizerte@comachem.com{"\n"}agence.sidithabet@comachem.com
 </Text> */}
- <Pressable  onPress={() => Linking.openURL('https://www.facebook.com/imed.rahal.7/')}style={{marginLeft:110}} >
+ <Pressable  onPress={() => Linking.openURL('https://www.facebook.com/profile.php?id=100055051277733')}style={{marginLeft:110}} >
                 <FontAwesome name="facebook-square" size={60} style={{ marginLeft: -30, color:"#DAA520",marginBottom:-60 }} />
                 <Text style={{ color: "white", marginTop: 60, marginLeft: -80 }}>press to see facebook</Text>
                 </Pressable>
@@ -41,12 +41,12 @@ export default function AboutUs() {
                 <Text style={{ color: "white", marginTop: 70, marginLeft: -80 }}>press to see facebook</Text>
                 </Pressable>
             </View> */}
-            <Pressable  
+            {/* <Pressable  
             onPress={onPressNav}
             >
                 <Text style={{ marginTop: -10, left: -90, fontSize: 20, color: "white", marginLeft: -105, marginRight: -150 }}>more deteils about agences    
                 </Text></Pressable>
-                <AntDesign style={styles.icon} name='arrowright' size={25} />
+                <AntDesign style={styles.icon} name='arrowright' size={25} /> */}
 
 
             <StatusBar style="auto" />

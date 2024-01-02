@@ -143,8 +143,8 @@ export default function About() {
                 <Text style={{
                     color: "white", marginTop: 20, marginBottom: 35, fontSize: 35, marginLeft: 105
                 }}>
-                  <Text style={{ color: "#b19777", marginLeft: 50 }}> Nos </Text> Agences                </Text>
-              
+                  <Text style={{ color: "#b19777"}}> Nos </Text> Agences                </Text>
+              <Text style={{ color: "white", marginLeft: 10 ,fontSize: 25 }}> On a 8 agences. Ici vous allez trouver tous les contacts :</Text>
                   <View style={styles.imageRow}>
                  <Image source={Map} style={{ height: 85, width: 85, marginLeft: 15 }} />
                  <Text style={{ color: "white", marginTop: 90, marginLeft: -100, marginBottom:10 }}>

@@ -73,8 +73,8 @@ return (
         }}
         />
         <Tab.Screen
-         name="Agence" 
-         component={Agence}
+         name="AllPriducts" 
+         component={AllPriducts}
          options={{
           tabBarIcon: ({focused})=>{
             return (
@@ -86,7 +86,7 @@ return (
           }
         }}
          />
-        <Tab.Screen 
+        {/* <Tab.Screen 
         name="Contact" 
         component={Contact} 
         options={{
@@ -99,7 +99,7 @@ return (
             )
           }
         }}
-        />
+        /> */}
          
      </Tab.Navigator>
        )
@@ -128,7 +128,7 @@ return (
               <Stack.Screen name="Categories" component={Categories} /> 
               <Stack.Screen name="SearchPage" component={SearchPage} />  
               <Stack.Screen name="ProductDetail" component={ProductDetail}/> 
-              <Stack.Screen name="AllPriducts" component={AllPriducts}/> 
+              {/* <Stack.Screen name="AllPriducts" component={AllPriducts}/>  */}
               <Stack.Screen name="Agence" component={Agence}/> 
 
               
