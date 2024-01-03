@@ -391,8 +391,7 @@ export default function Services() {
   return (
 
 <View style={styles.container}>
-       <Text style={{color:"#b19777",marginTop:20,marginBottom:20,fontSize:30}}>
-       <Text style={{color:"white"}}> OUR</Text> Products</Text>
+    
            {/* <View style={{backgroundColor:"white",height:1,width:"100%",marginBottom:10}}></View> */}
 
            {/* <FlatList
@@ -409,10 +408,11 @@ export default function Services() {
   keyExtractor={(item) => item}
 /> */}
 {(images.slice(0, numberOfNamesToDisplay)).map((item,index) => (
-     <View key={item.id} style={{width:"100%",padding:15}}>
+     <View key={item.id} style={{width:"100%",padding:20,marginTop:30}}>
      <Image source={ item.image } style={styles.image} />
-     <View style={{backgroundColor:"#3b3b42",width:"40%",height:"15%",top:15,left:15,position:"absolute"}}>
-         <Text style={{color:"white",top:"20%"}}>{item.title}</Text>
+     <View style={{backgroundColor:"#4a4747",width:"50%",height:"15%",top:5,left:8,position:"absolute"
+    }}>
+         <Text style={{color:"white",top:"20%"}}>   PANNEAUX MÉLAMINER</Text>
      </View>
      </View>
    
@@ -423,7 +423,7 @@ export default function Services() {
                 <Text style={{ marginTop: 10, left: 50, fontSize: 20, color: "white", marginLeft: 105 }}>See More    
   
                 </Text>
-                <AntDesign style={{marginTop: -30,left:250,color: "white"}} name='arrowright' size={40} />
+                <AntDesign style={{marginTop: -30,left:250,color: "white"}} name='arrowdown' size={40} />
 
                 </TouchableOpacity>  )}
                 <TouchableOpacity onPress={onPressProduct}>
@@ -485,7 +485,7 @@ const styles = StyleSheet.create({
   },
  
   image: {
-    width: '100%', // Adjust as needed
+    width: '97%', // Adjust as needed
     height: 300, // Adjust as needed
     
   },
