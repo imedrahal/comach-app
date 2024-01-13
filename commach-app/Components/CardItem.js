@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { Button, Dimensions, Image, LayoutAnimation, Platform, StyleSheet, UIManager, View, Text, TouchableOpacity,Pressable } from 'react-native';
 const { width } = Dimensions.get('screen');
 import { ScrollView } from 'react-native-virtualized-view'
@@ -8,11 +8,12 @@ import Equipe from '../assets/Equipe-COMACHEM.jpg'
 import { FlatGrid } from "react-native-super-grid";
 
 const data = [
-    Equipe,
-    Equipe,
-    Equipe,
-];
-for (let i = 0; i < 50; i += 1) data.push(i)
+    {image:Equipe,categorie:"categories 7"},
+    {image:Equipe,categorie:"categories 7"},
+    {image:Equipe,categorie:"lowla"},
+];// for (let i = 0; i < 50; i += 1) data.push(i)
+
+
 
 if (Platform.OS === 'android') {
     if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -20,9 +21,9 @@ if (Platform.OS === 'android') {
     }
 }
 
-export default function DynamicColumns() {
+export default function DynamicColumns(item) {
     const [columns, setColumns] = useState(2);
-    // const categorie = categories
+    const categorie = item.categories.item
     const navigation = useNavigation();
 
     const setColumnCount = (val) => {
@@ -30,6 +31,11 @@ export default function DynamicColumns() {
         setColumns(val)
     }
 
+    const imedItems = data.filter((categ) => categ.categorie === categorie);
+
+    useEffect(() => {
+        // Code to be executed as a side effect
+    }, []);
     const onPressProduct = (item) => {
         // Handle press event here
         navigation.navigate("ProductDetail",item={item})
@@ -46,14 +52,21 @@ export default function DynamicColumns() {
                     navigation.navigate("ProductDetail",item={item})
                   }
                 > 
-                  <Image style={styles.image} resizeMode="contain" source={Equipe} />
+                  {/* <Image style={styles.image} resizeMode="contain" source={item} />
                   <View style={{ alignItems: "center" }}>
                   {console.log(item ,'hellloooo')}
                     <Text style={styles.itemName}>name</Text>
                     <Text style={styles.itemName}>press to see more details </Text>
 
-                 
-                  </View>
+        
+                  </View> */}
+                  <View key={item.id} style={{width:"100%",padding:0,marginTop:0,marginBottom:20}}>
+     <Image source={ item.image } style={styles.image} />
+     <View style={{backgroundColor:"#4a4747",width:"90%",height:"15%",top:-5,left:-2,position:"absolute"
+    }}>
+         <Text style={{color:"white",top:"20%"}}>   PANNEAUX MÉLAMINER</Text>
+     </View>
+     </View>
                 </Pressable>
               </View>
     
@@ -67,11 +80,12 @@ export default function DynamicColumns() {
     return (
         <View style={styles.container} >
        
+       {console.log(categorie,"item jey jdid")}
 
             <FlatGrid
         itemDimension={196}
         spacing={8}
-        data={data}
+        data={imedItems}
         style={styles.gridView}
         renderItem={renderItem}
         key={(item) => `key-${item.id * Math.random()}`}
@@ -108,8 +122,8 @@ const styles = StyleSheet.create({
         elevation: 5,
       },
       image: {
-        width: "100%",
-        height: 130,
+        width:205,
+        height: 190,
         borderRadius: 8,
       },
       text: {
@@ -144,8 +158,9 @@ const styles = StyleSheet.create({
       itemContainer: {
         // justifyContent: "flex-end",
         borderRadius: 10,
-        height: 195,
-        width:195
+        height: 255,
+        width:205,
+        marginBottom:10
       },
       itemName: {
         fontSize: 16,

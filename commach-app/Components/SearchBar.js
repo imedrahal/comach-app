@@ -212,12 +212,12 @@ export default function SearchBar( {setVisible,visible}) {
     <ScrollView contentContainerStyle={styles.list}>
     {filteredData.map((product,index)=>(
         <View key={index}>
-                       <View style={{backgroundColor:"grey",height:0.3,width:"100%",marginBottom:10}}></View>
+                       <View style={{backgroundColor:"grey",height:0.3,width:690,marginBottom:10}}></View>
 
             <Text style={styles.text} onPress={() =>
                     navigation.navigate("ProductDetail",item={product})
                   }><FontAwesome style={styles.icon2} name='search' size={15} />
-{"   "}{product.value} </Text>
+{"   "}{product.value}  </Text>
         </View>
     ))}
   </ScrollView>
@@ -267,7 +267,7 @@ const styles = StyleSheet.create({
     },
     Main: {
         backgroundColor: '#fff',
-        width: 340,
+        width: "60%",
         height: 45,
         borderWidth: 1,
         borderColor: "#C0C0C0",
@@ -275,12 +275,12 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 40,
         alignItems: 'center',
         justifyContent: 'center',
-        marginLeft: 15,
+        marginLeft: "12%",
     },
     input: {
         marginLeft: 0,
         marginTop: 5,
-        width:250
+        width:150
     },
     Botton: {
         height: 45,
@@ -328,9 +328,13 @@ const styles = StyleSheet.create({
 
           },
           text:{
-            marginLeft:20,
-            marginRight:100
+            marginLeft:"15%",
+            // marginRight:100
           },
+          list:{
+            width:"100%",
+            marginBottom:50
+          }
         
    
    

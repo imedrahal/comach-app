@@ -9,7 +9,7 @@ import SearchPage from '../Components/SearchPage'
 import ProductDetail from "../Components/ProductDetail"
 import AllPriducts from "../Components/AllProducts"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import { KeyboardAvoidingView } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -17,22 +17,27 @@ import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Animated, Dimensions, FlatList, LayoutAnimation, StyleSheet, Text, TouchableOpacity, View,Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-const { width } = Dimensions.get('window');
+import { useSafeArea } from "react-native-safe-area-context";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+const { width } = Dimensions.get('window');
 const Tab =createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 const screenOptions = {
+  // keyboardHidesTabBar:true,
+  tabBarHideOnKeyboard: true,
+
   tabBarShowLabel:false,
   headerShown:false,
   tabBarStyle:{
-    // position: "absolute",
-    bottom: 0,
-    right: 0,
-    left: 0,
-    elevation: 0,
-    height: 80,
-    background: "#fff"
+    position: "absolute",
+    // bottom: -10,
+    // right: 0,
+    // left: 0,
+    // elevation:8,
+    // height: 70,
+    background: "#fff",
   }
 }
 
@@ -42,7 +47,8 @@ const screenOptions = {
 
 return (
 
-     <Tab.Navigator screenOptions={screenOptions}
+     <Tab.Navigator     
+     screenOptions={screenOptions}
     //  initialRouteName="Welcome"
      >
         <Tab.Screen 
@@ -86,41 +92,17 @@ return (
           }
         }}
          />
-        {/* <Tab.Screen 
-        name="Contact" 
-        component={Contact} 
-        options={{
-          tabBarIcon: ({focused})=>{
-            return (
-              <View style={{alignItems: "center", justifyContent: "center"}}> 
-               <Ionicons name="settings" size={24}  color={focused ? "#DAA520": "#111"} />
-                <Text style={{fonSize: 12, color: "#16247d"}}>Contact Us</Text>
-          </View>
-            )
-          }
-        }}
-        /> */}
+      
          
      </Tab.Navigator>
        )
     }
 
-    // const RootStack = (props) => {
-    //     return (
-    //             <Stack.Navigator screenOptions={{ headerShown: false }}
-    //             // initialRouteName="Home"
-    //             >
-    //            <Stack.Screen name="HomePage" component={HomeStack} /> 
-    //           <Stack.Screen name="Categories" component={Categories} /> 
-    //           <Stack.Screen name="SearchPage" component={SearchPage} />  
-    //           <Stack.Screen name="ProductDetail" component={ProductDetail} /> 
-    //           {/* <Stack.Screen name="ProductDetail" component={ProductDetail} />  */} 
-    //         </Stack.Navigator>
-    //     );
-    //   };
+
       function HomeStack() {
         return (
-          <Stack.Navigator screenOptions={{ headerShown: false }}
+          <Stack.Navigator screenOptions={{ headerShown: false
+          }}
           //  initialRouteName="HomePage"
           >
               <Stack.Screen name="HomePage" component={Home}/> 
@@ -165,9 +147,14 @@ return (
     })
 
     export default function Nav(){
+      // const insets = useSafeArea();
+
         return (
+          <SafeAreaProvider>
             <NavigationContainer>
+         
               <BottomBar/>
             </NavigationContainer>
+            </SafeAreaProvider>
         )
     }

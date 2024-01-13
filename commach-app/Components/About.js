@@ -18,7 +18,7 @@ export default function About() {
             height: "100%"
         }}>
             <View style={{ height: 110, backgroundColor: '#3b3b42', marginBottom: 10 }}>
-                <Image source={logo} style={{ width: 125, height: 85, marginBottom: -45, marginTop: 35, margin: 160 }} />
+                <Image source={logo} style={{ width: 125, height: 85, marginBottom: -45, marginTop: 35, margin: "37%" }} />
                 <View style={{ backgroundColor: "white", height: 1, width: "100%", marginTop: 40 }}></View>
             </View>
             <Pressable onPress={onPress}>
@@ -28,16 +28,15 @@ export default function About() {
   </Pressable>
             <ScrollView  >
                 <Text style={{
-                    color: "white", marginTop: 5, marginBottom: -35, fontSize: 35, marginLeft: 105
-                }}>
-                    COMACHEM                </Text>
+                    color: "white", marginTop: 5, marginBottom: -35, fontSize: 35, marginLeft: "24%"
+                }}>COMACHEM</Text>
                 <Text style={{
                     color: "#b19777", marginTop: 60, marginBottom: -110, fontSize: 35, marginLeft: 20
                 }}>
                     LE SPÉCIALISTE DU MDF
                 </Text>
                 <Image source={Equipe} style={{
-                    height: 170, width: 190, position: "relative", borderRadius: 35, marginBottom: 10, marginTop: 130, marginLeft: 110
+                    height: 170, width: 190, position: "relative", borderRadius: 35, marginBottom: 10, marginTop: 130, marginLeft: "22%"
                 }} />
                 <Text style={{ color: "white", marginTop: 10, marginBottom: 20, fontSize: 15, padding: 15 }}>
                     COMACHEM est une entreprise familiale qui propose aux professionnels et aux particuliers des produits MDF et dérivé pour la construction, la rénovation, l'aménagement intérieur (cuisine dressing, …).
@@ -78,31 +77,31 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
                 <Text style={{ fontSize: 15, color: "white", marginTop: 10, marginRight: 15, marginLeft: 15, marginBottom: 20}}>COMACHEM est principalement fournisseur et distributeur de MDF, de Placage, High Gloss et Digital Polylac.
                 Continuer à croître comme une société de distribution de première classe qui offre d’excellents produits incorporant un service à valeur ajoutée et une expertise pour assurer la satisfaction du client.</Text>
                 <Text style={{
-                    color: "#b19777", marginTop: 6, marginBottom: 20, fontSize: 35, marginLeft: 40
+                    color: "#b19777", marginTop: 6, marginBottom: 20, fontSize: 35, marginLeft: "5%"
                 }}>
                 Famille COMACHEM
                 </Text>
 
                 <View style={styles.imageRow}>
-  <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25}}>
+  <View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginBottom:25,marginLeft:"-0.5%"}}>
   <TouchableOpacity   onPress={() =>
                     navigation.navigate("ProductDetail",item={name:"18"})
                   }>
 
-    <Image source={Equipe} style={{height:150,width:200,borderRadius:25}}  />
-    <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>
+    <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}}  />
+    <Text style={{color:"#b19777",marginTop:10,marginLeft:"10%",marginBottom:5}}>
        PLUS DE 6 AGENCES</Text>
        <Text style={{color:"#b19777",marginTop:0,marginLeft:30,marginBottom:50}}>
        PLUS DE 6 AGENCES</Text>
        </TouchableOpacity>
 
        </View>
-       <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginLeft:10}}>
+       <View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginLeft:"1.5%"}}>
        <TouchableOpacity    onPress={() =>
                     navigation.navigate("ProductDetail",item=18)
                   }>
 
-    <Image source={Equipe}  style={{height:150,width:200,borderRadius:25}}/>
+    <Image source={Equipe}  style={{height:150,width:"100%",borderRadius:25}}/>
     
            <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}} >99% SATISFACTION</Text>
            <Text style={{color:"#b19777",marginTop:10,marginLeft:30}} >99% SATISFACTION</Text>
@@ -113,19 +112,19 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
   </View>
   <View style={styles.imageRow}>
 
-<View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25}}>
+<View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginBottom:25,marginLeft:"-0.5%"}}>
 
 
-  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}} />
+  <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}} />
      <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
      <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
 
      </View>
 
-     <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginLeft:10,marginRight:0}}>
+     <View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginLeft:"1.5%"}}>
     
 
-  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}}/>
+  <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}}/>
        <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
 </Text>
 <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
@@ -136,19 +135,19 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
 </View>
 <View style={styles.imageRow}>
 
-<View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25}}>
+<View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginBottom:25,marginLeft:"-0.5%"}}>
 
 
-  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}} />
+  <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}} />
      <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
      <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
 
      </View>
 
-     <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginLeft:10,marginRight:0}}>
+     <View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginLeft:"1.5%"}}>
     
 
-  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}}/>
+  <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}}/>
        <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
 </Text>
 <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
@@ -159,19 +158,19 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
 </View>
 <View style={styles.imageRow}>
 
-<View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25}}>
+<View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginBottom:25,marginLeft:"-0.5%"}}>
 
 
-  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}} />
+  <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}} />
      <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
      <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
 
      </View>
 
-     <View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginLeft:10,marginRight:0}}>
+     <View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginLeft:"1.5%"}}>
     
 
-  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}}/>
+  <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}}/>
        <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
 </Text>
 <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
@@ -182,10 +181,10 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
 </View>
 <View style={styles.imageRow}>
 
-<View style={{backgroundColor:'white',borderRadius:25,height:210,width:200,marginBottom:25,marginLeft:90 }}>
+<View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginBottom:25,marginLeft:"25%" }}>
 
 
-  <Image source={Equipe} style={{height:150,width:200,borderRadius:25}} />
+  <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}} />
      <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
      <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
 
@@ -212,7 +211,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: "100%",
-        padding:10
+        padding:"2.5%"
 
         // Evenly distribute images
       },

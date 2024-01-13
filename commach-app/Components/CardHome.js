@@ -410,7 +410,7 @@ export default function Services() {
 {(images.slice(0, numberOfNamesToDisplay)).map((item,index) => (
      <View key={item.id} style={{width:"100%",padding:20,marginTop:30}}>
      <Image source={ item.image } style={styles.image} />
-     <View style={{backgroundColor:"#4a4747",width:"50%",height:"15%",top:5,left:8,position:"absolute"
+     <View style={{backgroundColor:"#4a4747",width:"60%",height:"15%",top:5,left:8,position:"absolute"
     }}>
          <Text style={{color:"white",top:"20%"}}>   PANNEAUX MÉLAMINER</Text>
      </View>
@@ -420,10 +420,10 @@ export default function Services() {
   <View>
   {images.length > numberOfNamesToDisplay && (
 <TouchableOpacity onPress={() => setNumberOfNamesToDisplay(images.length)}>
-                <Text style={{ marginTop: 10, left: 50, fontSize: 20, color: "white", marginLeft: 105 }}>See More    
+                <Text style={{ marginTop: 10, left: 50, fontSize: 20, color: "white", marginLeft: "22%" }}>See More    
   
                 </Text>
-                <AntDesign style={{marginTop: -30,left:250,color: "white"}} name='arrowdown' size={40} />
+                <AntDesign style={{marginTop: -30,left:"60%",color: "white"}} name='arrowdown' size={40} />
 
                 </TouchableOpacity>  )}
                 <TouchableOpacity onPress={onPressProduct}>
@@ -485,7 +485,7 @@ const styles = StyleSheet.create({
   },
  
   image: {
-    width: '97%', // Adjust as needed
+    width: '99%', // Adjust as needed
     height: 300, // Adjust as needed
     
   },

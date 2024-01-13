@@ -17,9 +17,9 @@ export default function Categories(categories) {
     <View
     //  style={{marginTop:100}}
      >
-              <View style={{height:190, backgroundColor: '#3b3b42',marginBottom:10}}>
+              <View style={{height:210, backgroundColor: '#3b3b42',marginBottom:10}}>
             <Image source={logo} style={{ width: 125, height: 85, marginBottom: -45, marginTop: 35, margin: 160 }} />
-            <View style={{marginBottom:110}}>
+            <View style={{marginBottom:130}}>
             <Text style={{position:'absolute',paddingLeft:60,paddingTop:70,fontSize: 20,fontWeight: 'bold',color: "white" }}> Categorie selected: {categories.route.params.item}</Text>
      <Pressable onPress={onPress}>
         <View style={{width:50,height:50,borderRadius:25,backgroundColor:'#DAA520',position:'absolute',top:50,left:0}}>
