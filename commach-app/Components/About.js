@@ -116,8 +116,8 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
 
 
   <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}} />
-     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
-     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>name</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>post</Text>
 
      </View>
 
@@ -125,9 +125,9 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
     
 
   <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}}/>
-       <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+       <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>name
 </Text>
-<Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+<Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>post
 </Text>
 
 </View>
@@ -139,8 +139,8 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
 
 
   <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}} />
-     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
-     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>name</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>post</Text>
 
      </View>
 
@@ -148,9 +148,9 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
     
 
   <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}}/>
-       <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+       <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>name
 </Text>
-<Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+<Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>post
 </Text>
 
 </View>
@@ -162,8 +162,8 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
 
 
   <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}} />
-     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
-     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>name</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>post</Text>
 
      </View>
 
@@ -171,9 +171,9 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
     
 
   <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}}/>
-       <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+       <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>name
 </Text>
-<Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>STOCK DISPONIBLE
+<Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>post
 </Text>
 
 </View>
@@ -181,12 +181,12 @@ COMACHEM essaye de croître sa notoriété et sa réputation sur le marché esse
 </View>
 <View style={styles.imageRow}>
 
-<View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginBottom:25,marginLeft:"25%" }}>
+<View style={{backgroundColor:'white',borderRadius:25,height:210,width:"50%",marginBottom:95,marginLeft:"25%" }}>
 
 
   <Image source={Equipe} style={{height:150,width:"100%",borderRadius:25}} />
-     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>TRANSPORT ASSURÉ</Text>
-     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>TRANSPORT ASSURÉ</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:-5}}>name</Text>
+     <Text style={{color:"#b19777",marginTop:10,marginLeft:30,marginBottom:5}}>post</Text>
 
      </View>
 

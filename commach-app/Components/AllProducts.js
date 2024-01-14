@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Pressable,ScrollView ,Image,TouchableOpacity} from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from '@expo/vector-icons';
-import Card from "./CardItem"
+import Card from "./CardItemAllProd"
 import Search from './SearchBar'
 import logo from '../assets/logo.png'
 

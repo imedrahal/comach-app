@@ -8,6 +8,7 @@ import Agence from '../Components/Agences'
 import SearchPage from '../Components/SearchPage'
 import ProductDetail from "../Components/ProductDetail"
 import AllPriducts from "../Components/AllProducts"
+import CardItemAllProd from "../Components/CardItemAllProd"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { KeyboardAvoidingView } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
