@@ -409,11 +409,15 @@ export default function Services() {
 /> */}
 {(images.slice(0, numberOfNamesToDisplay)).map((item,index) => (
      <View key={item.id} style={{width:"100%",padding:20,marginTop:30}}>
+      <TouchableOpacity onPress={() =>navigation.navigate("ProductDetail",item={item})
+}>
+
      <Image source={ item.image } style={styles.image} />
      <View style={{backgroundColor:"#4a4747",width:"60%",height:"15%",top:5,left:8,position:"absolute"
     }}>
          <Text style={{color:"white",top:"20%"}}>   PANNEAUX MÉLAMINER</Text>
      </View>
+     </TouchableOpacity>
      </View>
    
   ))} 

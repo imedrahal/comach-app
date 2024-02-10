@@ -18,9 +18,9 @@ export default function AllProducts() {
     <View
     //  style={{marginTop:100}}
      >
-              <View style={{height:210, backgroundColor: '#3b3b42',marginBottom:10}}>
+              <View style={{height:190, backgroundColor: '#3b3b42',marginBottom:30}}>
             <Image source={logo} style={{ width: 125, height: 85, marginBottom: -45, marginTop: 35, margin: "35%" }} />
-            <View style={{marginBottom:90}}>
+            <View style={{marginBottom:0}}>
             {/* <Text style={{position:'absolute',paddingLeft:60,paddingTop:70,fontSize: 20,fontWeight: 'bold',color: "white" }}> All Products</Text> */}
             <Text style={{color:"#b19777",position:'absolute',paddingLeft:100,paddingTop:70,fontSize:30}}>
        <Text style={{color:"white"}}> OUR</Text> Products</Text>
@@ -33,9 +33,9 @@ export default function AllProducts() {
         {/* {console.log(categories,"categoooo")} */}
 
      
-  <View style={{marginTop:"-5%",backgroundColor: '#3b3b42',height:"100%",marginBottom:160}}>
+  <View style={{marginTop:"-8%",backgroundColor: '#3b3b42',height:"100%",marginBottom:140}}>
   <Pressable onPress={onPress}>
-        <View style={{width:50,height:50,borderRadius:25,backgroundColor:'#DAA520',position:'relative',top:-65,left:0}}>
+        <View style={{width:50,height:50,borderRadius:25,backgroundColor:'#DAA520',position:'relative',top:-50,left:0}}>
         <AntDesign name="back" size={24} style={{marginTop:14,marginLeft:10}}/>
     </View>
   </Pressable>

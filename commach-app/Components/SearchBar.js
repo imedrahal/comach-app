@@ -8,11 +8,11 @@ import SwiperProducts from './SwiperProducts'
 import icon from "react-native-vector-icons/FontAwesome"
 
 const data = [
-    'Aswin Cheriyala',
-    'Alexander Nathaniel Johnson',
-    'Isabella Penelope Thompson',
-    'Benjamin Jeremiah Rodriguez',
-    'Elizabeth Gabriella Davis',
+    '12568',
+    '124777',
+    '1236558',
+    '1235875696',
+    '26896',
     'Christopher Alexander Martinez',
     'Charlotte Anastasia Wilson',
     'Theodore Sebastian Taylor',

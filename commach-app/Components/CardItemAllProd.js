@@ -11,7 +11,17 @@ const data = [
     {image:Equipe,categorie:"categories 7"},
     {image:Equipe,categorie:"categories 7"},
     {image:Equipe,categorie:"lowla"},
-];// for (let i = 0; i < 50; i += 1) data.push(i)
+    {image:Equipe,categorie:"lowla"},
+    {image:Equipe,categorie:"lowla"},
+    {image:Equipe,categorie:"lowla"},
+    {image:Equipe,categorie:"lowla"},
+    {image:Equipe,categorie:"lowla"},
+    {image:Equipe,categorie:"lowla"},
+    {image:Equipe,categorie:"lowla"},
+    {image:Equipe,categorie:"lowla"},
+    {image:Equipe,categorie:"lowla"},
+];
+for (let i = 0; i < 50; i += 1) data.push(i)
 
 
 
@@ -60,7 +70,7 @@ export default function CardItem() {
      <Image source={ item.image } style={styles.image} />
      <View style={{backgroundColor:"#4a4747",width:"90%",height:"15%",top:-5,left:-2,position:"absolute"
     }}>
-         <Text style={{color:"white",top:"20%"}}>   PANNEAUX MÉLAMINER</Text>
+         <Text style={{color:"white",top:"20%"}}>{ item.categorie }</Text>
      </View>
      </View>
                 </Pressable>
@@ -93,8 +103,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         height:"100%",
-         marginBottom:560
-
+         marginBottom:590,
+         marginTop:"-9%"
       },
       item: {
         padding: 4,
